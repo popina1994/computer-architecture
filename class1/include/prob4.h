@@ -1,4 +1,15 @@
-struct stack_t;
+
+struct node_t
+{
+    struct node_t* next;
+    int elem;
+};
+
+struct stack_t
+{
+    struct node_t* head;
+};
+
 
 struct stack_t *Stack_new();
 
