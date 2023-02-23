@@ -4,7 +4,7 @@
 char* binaryInt(int value)
 {
     int len = sizeof(value) * 8;
-    char* binStr = malloc(len);
+    char* binStr = malloc(len + 1);
     for (int idx = len - 1; idx >= 0; idx --)
     {
         int testBit = 1 << (idx - 1);
@@ -20,6 +20,7 @@ char* binaryInt(int value)
         binStr[len - idx - 1] = cOut;
         value &= ~(testBit);
     }
+    binStr[len] = 0; 
     return binStr;
 }
 
